@@ -1,4 +1,7 @@
 package edu.icet.repositery;
 
-public interface Customerrepositery extends {
+import edu.icet.model.entity.CustomerEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface Customerrepositery extends JpaRepository<CustomerEntity, Integer> {
 }
