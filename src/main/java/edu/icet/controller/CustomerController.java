@@ -2,6 +2,7 @@ package edu.icet.controller;
 
 import edu.icet.model.dto.CustomerDTO;
 import edu.icet.service.CustomerService;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +19,13 @@ public class CustomerController {
     }
 
     @PutMapping("/update")
-    public void updateCustomer(CustomerDTO customerDTO){
+    public void updateCustomer(@RequestBody CustomerDTO customerDTO){
         service.updateCustomer(customerDTO);
     }
+
+    @DeleteMapping("delete-by-id/{id}")
+    public void deleteCustomer(Integer id){
+        service.deleteCustomer(id);
+    }
+
 }

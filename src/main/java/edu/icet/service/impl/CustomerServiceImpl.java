@@ -29,7 +29,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void deleteCustomer(Integer id) {
-
+        repositery.deleteById(id);
     }
 
     @Override
