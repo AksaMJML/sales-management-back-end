@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/customer")
 @RequiredArgsConstructor
@@ -25,12 +27,17 @@ public class CustomerController {
     }
 
     @DeleteMapping("/delete-by-id/{id}")
-    public void deleteCustomer(Integer id){
+    public void deleteCustomer(@PathVariable Integer id){
         service.deleteCustomer(id);
     }
 
     @GetMapping("/search-by-id/{id}")
-    public CustomerDTO searchById(Integer id){
+    public CustomerDTO searchById(@PathVariable Integer id){
        return service.searchById(id);
+    }
+
+    @GetMapping("/get-all")
+    public List<CustomerDTO> getAllCustomers(){
+        return getAllCustomers();
     }
 }
