@@ -3,6 +3,7 @@ package edu.icet.controller;
 import edu.icet.model.dto.CustomerDTO;
 import edu.icet.service.CustomerService;
 import jakarta.persistence.criteria.CriteriaBuilder;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,9 +24,13 @@ public class CustomerController {
         service.updateCustomer(customerDTO);
     }
 
-    @DeleteMapping("delete-by-id/{id}")
+    @DeleteMapping("/delete-by-id/{id}")
     public void deleteCustomer(Integer id){
         service.deleteCustomer(id);
     }
 
+    @GetMapping("/search-by-id/{id}")
+    public CustomerDTO searchById(Integer id){
+       return service.searchById(id);
+    }
 }

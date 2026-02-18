@@ -33,8 +33,10 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void searchById(Integer id) {
-
+    public CustomerDTO searchById(Integer id) {
+        CustomerEntity customerEntity = repositery.findById(id).get();
+        CustomerDTO customerDTO = mapper.map(customerEntity, CustomerDTO.class);
+        return customerDTO;
     }
 
     @Override

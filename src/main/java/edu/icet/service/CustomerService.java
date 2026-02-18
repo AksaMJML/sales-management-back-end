@@ -9,6 +9,6 @@ public interface CustomerService {
     void addCustomer(CustomerDTO customerDTO);
     void updateCustomer(CustomerDTO customerDTO);
     void deleteCustomer(Integer id);
-    void searchById(Integer id);
+    CustomerDTO searchById(Integer id);
     List<CustomerDTO> getAllCustomers();
 }
