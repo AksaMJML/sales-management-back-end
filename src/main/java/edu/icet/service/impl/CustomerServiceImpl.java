@@ -24,7 +24,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void updateCustomer(CustomerDTO customerDTO) {
-
+        repositery.save(mapper.map(customerDTO , CustomerEntity.class));
     }
 
     @Override

@@ -3,10 +3,7 @@ package edu.icet.controller;
 import edu.icet.model.dto.CustomerDTO;
 import edu.icet.service.CustomerService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/customer")
@@ -18,5 +15,10 @@ public class CustomerController {
     @PostMapping("/add")
     public void addcustomer(@RequestBody CustomerDTO customerDTO){
         service.addCustomer(customerDTO);
+    }
+
+    @PutMapping("/update")
+    public void updateCustomer(CustomerDTO customerDTO){
+        service.updateCustomer(customerDTO);
     }
 }
